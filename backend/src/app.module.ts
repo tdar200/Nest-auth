@@ -8,9 +8,7 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     AuthModule,
     UsersModule,
-    MongooseModule.forRoot(
-      'mongodb+srv://tahseen:1029384756@cluster0.ccx1k.mongodb.net/CommerceWebsite?retryWrites=true&w=majority',
-    ),
+    MongooseModule.forRoot(process.env.MONGO),
     ConfigModule.forRoot({ isGlobal: true }),
   ],
 })
